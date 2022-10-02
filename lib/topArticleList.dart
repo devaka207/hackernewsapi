@@ -96,8 +96,8 @@ class _TopArticleListState extends State<TopArticleList> {
                 );
 
               },
-              title: Text(_stories[index].title, style: const TextStyle(fontSize: 18)),
-              subtitle: Text(_stories[index].url, style: const TextStyle(fontSize: 15)),
+              title: Text(_stories[index].title??"", style: const TextStyle(fontSize: 18)),
+              subtitle: Text(_stories[index].url??"", style: const TextStyle(fontSize: 15)),
               trailing: Container(
                   decoration: const BoxDecoration(
                       color: Colors.red,

@@ -25,7 +25,7 @@ class Webservice {
     if (response.statusCode == 200) {
       Iterable storyIds = jsonDecode(response.body);
 
-      return Future.wait(storyIds.take(5).map((storyId) {
+      return Future.wait(storyIds.take(50).map((storyId) {
         return _getStory(storyId);
       }));
 
