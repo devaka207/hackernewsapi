@@ -1,4 +1,3 @@
-
 import 'package:webview_flutter/webview_flutter.dart';
 
 import 'dart:convert';
@@ -18,12 +17,9 @@ class TopArticleList extends StatefulWidget {
 
 class _TopArticleListState extends State<TopArticleList> {
   /*int _page = 0;
-
   final int _limit = 20;
-
   bool _isFirstLoadRunning = false;
   bool _hasNextPage = true;
-
   bool _isLoadMoreRunning = false;*/
   List<Story> _stories = List<Story>.empty();
 
@@ -38,7 +34,7 @@ class _TopArticleListState extends State<TopArticleList> {
 
     final responses = await Webservice().getTopStories();
     final stories = responses.map((response) {
-    final json = jsonDecode(response.body);
+      final json = jsonDecode(response.body);
       return Story.fromJSON(json);
 
     }).toList();
@@ -55,20 +51,15 @@ class _TopArticleListState extends State<TopArticleList> {
   }
 
   /*void _navigateToShowCommentsPage(BuildContext context, int index) async {
-
     final story = this._stories[index];
     final responses = await Webservice().getCommentsByStory(story);
     final comments = responses.map((response) {
       final json = jsonDecode(response.body);
       return Comment.fromJSON(json);
-
     }).toList();
-
     Navigator.push(context, MaterialPageRoute(
         builder: (context) => CommentListPage(story: story, comments: comments)
     ));
-
-
   }*/
 
   @override
